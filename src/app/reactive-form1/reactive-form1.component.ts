@@ -56,10 +56,6 @@ export class ReactiveForm1Component implements OnInit {
     return this.registrationForm.get('confirmPassword');
   }
 
-  get password() {
-    return this.registrationForm.get('password');
-  }
-
   get userName() {
     return this.registrationForm.get('userName');
   }
@@ -70,10 +66,7 @@ export class ReactiveForm1Component implements OnInit {
 
   onSubmit(): void {
     this.isSubmitted = true;
-    // if (this.registrationForm.invalid) {
-    //   return;
-    // }
-
+    if (this.registrationForm.invalid) return;
     console.log(JSON.stringify(this.registrationForm.value, null, 2));
   }
 

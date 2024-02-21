@@ -137,21 +137,15 @@
         <div
           class="error-message"
           *ngIf="
-            (registrationForm.get('confirmPassword')?.touched || isSubmitted) &&
-            registrationForm.get('confirmPassword')?.invalid
+            (confirmPassword?.touched || isSubmitted) &&
+            confirmPassword?.invalid
           "
         >
-          <div
-            *ngIf="
-              registrationForm.get('confirmPassword')?.hasError('required')
-            "
-          >
+          <div *ngIf="confirmPassword?.hasError('required')">
             Confirm Password is required.
           </div>
-          <div
-            *ngIf="registrationForm.get('confirmPassword')?.errors?.['confirmPasswordValidator']"
-          >
-            Passsword and Confirm Password didn't match.
+          <div *ngIf="confirmPassword?.errors?.['confirmPasswordValidator']">
+            Password and Confirm Password didn't match.
           </div>
         </div>
       </div>
