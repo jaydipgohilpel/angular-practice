@@ -1,54 +1,219 @@
 <div class="wrapper">
   <div class="title">Registration</div>
-  <form action="#">
-      <div class="user-details">
-          <div class="input-box">
-              <span class="details">Full Name</span>
-              <input type="text" placeholder="Enter your fullname" required>
+  <form [formGroup]="registrationForm">
+    <div class="user-details">
+      <div class="input-box">
+        <span class="details">Full Name</span>
+        <input
+          type="text"
+          placeholder="Enter your fullname"
+          formControlName="fullName"
+          required
+        />
+        <div
+          *ngIf="
+            fullName &&
+            (isSubmitted || fullName?.touched) &&
+            fullName.hasError('required')
+          "
+          class="invalid-feedback"
+        >
+          <div class="error-message" *ngIf="fullName.hasError('required')">
+            FullName is required
           </div>
-          <div class="input-box">
-              <span class="details">Username</span>
-              <input type="text" placeholder="Enter your username" required>
-          </div>
-          <div class="input-box">
-              <span class="details">E-Mail</span>
-              <input type="email" placeholder="Enter your email" required>
-          </div>
-          <div class="input-box">
-              <span class="details">Phone Number</span>
-              <input type="number" placeholder="Enter your number" required>
-          </div>
-          <div class="input-box">
-              <span class="details">Password</span>
-              <input type="password" placeholder="Enter your Password" required>
-          </div>
-          <div class="input-box">
-              <span class="details">Confirm Password</span>
-              <input type="password" placeholder="Confirm your Password" required>
-          </div>
+        </div>
       </div>
-      <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
-          <span class="gender-title">Gender</span>
-          <div class="category">
-              <label for="dot-1">
-                  <span class="dot one"></span>
-                  <span class="gender">Male</span>
-              </label>
-              <label for="dot-2">
-                  <span class="dot two"></span>
-                  <span class="gender">Female</span>
-              </label>
-              <label for="dot-3">
-                  <span class="dot three"></span>
-                  <span class="gender">Prefer Not to say</span>
-              </label>
+      <div class="input-box">
+        <span class="details">Username</span>
+        <input
+          type="text"
+          placeholder="Enter your username"
+          formControlName="userName"
+          required
+        />
+        <div
+          class="error-message"
+          *ngIf="
+            (registrationForm.get('userName')?.touched || isSubmitted) &&
+            registrationForm.get('userName')?.invalid
+          "
+        >
+          <div *ngIf="registrationForm.get('userName')?.hasError('required')">
+            Username is required.
           </div>
+          <div *ngIf="registrationForm.get('userName')?.hasError('minlength')">
+            Username must be at least 6 characters
+          </div>
+        </div>
       </div>
-      <div class="button">
-          <input type="submit" value="Register">
+      <div class="input-box">
+        <span class="details">E-Mail</span>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          formControlName="email"
+          required
+        />
+        <div
+          *ngIf="
+            (isSubmitted || control('email')?.touched) &&
+            control('email').invalid
+          "
+          class="invalid-feedback"
+        >
+          <div
+            class="error-message"
+            *ngIf="control('email').hasError('required')"
+          >
+            Email is required1
+          </div>
+          <div class="error-message" *ngIf="control('email').hasError('email')">
+            Email is invalid
+          </div>
+        </div>
       </div>
+      <div class="input-box">
+        <span class="details">Phone Number</span>
+        <input
+          type="text"
+          placeholder="Enter your number"
+          formControlName="phoneNumber"
+          required
+          maxlength="10"
+        />
+        <div
+          class="error-message"
+          *ngIf="
+            (control('phoneNumber')?.touched || isSubmitted) &&
+            control('phoneNumber')?.invalid
+          "
+        >
+          <div *ngIf="control('phoneNumber')?.hasError('required')">
+            phone Number is required.
+          </div>
+          <div *ngIf="control('phoneNumber')?.hasError('pattern')">
+            phone Number is invalid,
+          </div>
+          <div
+            *ngIf="
+              control('phoneNumber')?.hasError('minlength') ||
+              control('phoneNumber')?.hasError('maxlength')
+            "
+          >
+            phone Number size invalid minimum and maximum 10 character.
+          </div>
+        </div>
+      </div>
+      <div class="input-box">
+        <span class="details">Password</span>
+        <input
+          type="password"
+          placeholder="Enter your Password"
+          formControlName="password"
+          required
+          maxlength="10"
+        />
+        <div
+          class="error-message"
+          *ngIf="
+            (registrationForm.get('password')?.touched || isSubmitted) &&
+            registrationForm.get('password')?.invalid
+          "
+        >
+          <div *ngIf="registrationForm.get('password')?.hasError('required')">
+            Password is required.
+          </div>
+        </div>
+      </div>
+      <div class="input-box">
+        <span class="details">Confirm Password</span>
+        <input
+          type="password"
+          placeholder="Confirm your Password"
+          formControlName="confirmPassword"
+          required
+          maxlength="10"
+        />
+        <div
+          class="error-message"
+          *ngIf="
+            (registrationForm.get('confirmPassword')?.touched || isSubmitted) &&
+            registrationForm.get('confirmPassword')?.invalid
+          "
+        >
+          <div
+            *ngIf="
+              registrationForm.get('confirmPassword')?.hasError('required')
+            "
+          >
+            Confirm Password is required.
+          </div>
+          <div
+            *ngIf="registrationForm.get('confirmPassword')?.errors?.['confirmPasswordValidator']"
+          >
+            Passsword and Confirm Password didn't match.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gender-details">
+      <input type="radio" value="male" formControlName="gender" id="dot-1" />
+      <input type="radio" value="female" formControlName="gender" id="dot-2" />
+      <input
+        type="radio"
+        value="prefer-not-to-say"
+        formControlName="gender"
+        id="dot-3"
+      />
+      <span class="gender-title">Gender</span>
+      <div class="category">
+        <label for="dot-1">
+          <span class="dot one"></span>
+          <span class="gender">Male</span>
+        </label>
+        <label for="dot-2">
+          <span class="dot two"></span>
+          <span class="gender">Female</span>
+        </label>
+        <label for="dot-3">
+          <span class="dot three"></span>
+          <span class="gender">Prefer Not to say</span>
+        </label>
+      </div>
+      <div
+        class="error-message"
+        *ngIf="
+          (registrationForm.get('gender')?.touched || isSubmitted) &&
+          registrationForm.get('gender')?.invalid
+        "
+      >
+        <div *ngIf="registrationForm.get('gender')?.hasError('required')">
+          Gender is required.
+        </div>
+      </div>
+    </div>
+    <div class="input-box">
+      <input
+        type="checkbox"
+        formControlName="acceptTerms"
+        placeholder="Confirm your Password"
+        required
+      />
+      <span class="details term">Accept All Term && Condition</span>
+      <div
+        class="error-message"
+        *ngIf="
+          (registrationForm.get('acceptTerms')?.touched || isSubmitted) &&
+          registrationForm.get('acceptTerms')?.invalid
+        "
+      >
+        <div *ngIf="registrationForm.get('acceptTerms')?.hasError('required')">
+          Term && Condition is required.
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <input type="submit" value="Register" (click)="onSubmit()" />
+    </div>
   </form>
 </div>
