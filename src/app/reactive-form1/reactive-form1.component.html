@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="title">Registration</div>
   <form [formGroup]="registrationForm">
-    <div *ngIf="!isRegistrationComplete">
+    <div>
       <div class="user-details">
         <div class="input-box">
           <span class="details">Full Name</span>
@@ -155,88 +155,193 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="gender-details">
-        <input type="radio" value="male" formControlName="gender" id="dot-1" />
-        <input
-          type="radio"
-          value="female"
-          formControlName="gender"
-          id="dot-2"
-        />
-        <input
-          type="radio"
-          value="prefer-not-to-say"
-          formControlName="gender"
-          id="dot-3"
-        />
-        <span class="gender-title">Gender</span>
-        <div class="category">
-          <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Male</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Female</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Prefer Not to say</span>
-          </label>
+        <div class="input-box">
+          <span class="details">Date Of Birth</span>
+          <input
+            type="date"
+            placeholder="Confirm your Password"
+            formControlName="dob"
+            required
+            (change)="date()"
+            [max]="maxDate"
+          />
           <div
             class="error-message"
             *ngIf="
-              (registrationForm.get('gender')?.touched || isSubmitted) &&
-              registrationForm.get('gender')?.invalid
+              (control('dob')?.touched || isSubmitted) &&
+              control('dob')?.invalid
             "
           >
-            <div *ngIf="registrationForm.get('gender')?.hasError('required')">
-              Gender is required.
+            <div *ngIf="control('dob')?.hasError('required')">
+              Date Of Birth is required.
+            </div>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input
+            type="radio"
+            value="male"
+            formControlName="gender"
+            id="dot-1"
+          />
+          <input
+            type="radio"
+            value="female"
+            formControlName="gender"
+            id="dot-2"
+          />
+          <input
+            type="radio"
+            value="prefer-not-to-say"
+            formControlName="gender"
+            id="dot-3"
+          />
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three"></span>
+              <span class="gender">Other Gender</span>
+            </label>
+            <div
+              class="error-message"
+              *ngIf="
+                (registrationForm.get('gender')?.touched || isSubmitted) &&
+                registrationForm.get('gender')?.invalid
+              "
+            >
+              <div *ngIf="registrationForm.get('gender')?.hasError('required')">
+                Gender is required.
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="input-box">
-        <input
-          type="checkbox"
-          formControlName="acceptTerms"
-          placeholder="Confirm your Password"
-          required
-        />
-        <span class="details term">Accept All Term && Condition</span>
-        <div
-          class="error-message"
-          *ngIf="
-            (registrationForm.get('acceptTerms')?.touched || isSubmitted) &&
-            registrationForm.get('acceptTerms')?.invalid
-          "
-        >
-          <div
-            *ngIf="registrationForm.get('acceptTerms')?.hasError('required')"
-          >
-            Term && Condition is required.
-          </div>
-        </div>
+        <p class="minor" *ngIf="isMinor">
+          Nominee is Minor,Please Add Parent Details
+        </p>
       </div>
     </div>
-    <div formArrayName="employees" class="user-details">
+    <div formArrayName="patentDetails" class="user-details" *ngIf="isMinor">
       <div
         class="input-box"
-        *ngFor="let employee of employees().controls; let empIndex = index"
+        *ngFor="
+          let parent of patentDetails().controls;
+          let parIndex = index;
+          let last = last;
+          let first = first
+        "
       >
-        <div [formGroupName]="empIndex" class="notine-group">
-          <span class="details"> {{ empIndex + 1 }} First Name:</span>
-          <input type="text" formControlName="firstName" />
+        <div [formGroupName]="parIndex" class="notine-group">
+          <span class="details"> {{ parIndex + 1 }} First Name:</span>
+          <input
+            type="text"
+            formControlName="firstName"
+            placeholder="Enter your First name"
+          />
+          <div
+            class="error-message"
+            *ngIf="
+              (parent.get('firstName')?.touched || isSubmitted) &&
+              parent.get('firstName')?.invalid
+            "
+          >
+            <div *ngIf="parent.get('firstName')?.hasError('required')">
+              First Name is required.
+            </div>
+          </div>
           <span class="details"> Last Name:</span>
-          <input type="text" formControlName="lastName" />
+          <input
+            type="text"
+            formControlName="lastName"
+            placeholder="Enter your lastName"
+          />
+          <div>
+            <span class="details">Phone Number</span>
+            <input
+              type="text"
+              placeholder="Enter your number"
+              formControlName="phoneNumber"
+              required
+              maxlength="10"
+            />
+            <div
+              class="error-message"
+              *ngIf="
+                (parent.get('phoneNumber')?.touched || isSubmitted) &&
+                parent.get('phoneNumber')?.invalid
+              "
+            >
+              <div *ngIf="parent.get('phoneNumber')?.hasError('required')">
+                phone Number is required.
+              </div>
+              <div *ngIf="parent.get('phoneNumber')?.hasError('pattern')">
+                phone Number is invalid,
+              </div>
+              <div
+                *ngIf="
+                  parent.get('phoneNumber')?.hasError('minlength') ||
+                  parent.get('phoneNumber')?.hasError('maxlength')
+                "
+              >
+                phone Number size invalid minimum and maximum 10 character.
+              </div>
+            </div>
+          </div>
+          <div>
+            <span class="details">Adhar Number</span>
+            <input
+              type="text"
+              placeholder="Enter your Adhar Number"
+              formControlName="adharNumber"
+              required
+              maxlength="16"
+            />
+            <div
+              class="error-message"
+              *ngIf="
+                (parent.get('adharNumber')?.touched || isSubmitted) &&
+                parent.get('adharNumber')?.invalid
+              "
+            >
+              <div *ngIf="parent.get('adharNumber')?.hasError('required')">
+                Adhar Number is required.
+              </div>
+              <div *ngIf="parent.get('adharNumber')?.hasError('pattern')">
+                Adhar Number is invalid,
+              </div>
+              <div
+                *ngIf="
+                  parent.get('adharNumber')?.hasError('minlength') ||
+                  parent.get('adharNumber')?.hasError('maxlength')
+                "
+              >
+                Adhar size invalid minimum and maximum 16 character.
+              </div>
+            </div>
+          </div>
 
-          <button (click)="removeEmployee(empIndex)">Remove</button>
+          <div class="button custom-button">
+            <input
+              (click)="removeEmployee(parIndex)"
+              *ngIf="!first"
+              value="Remove"
+            />
+          </div>
 
-          <div formArrayName="skills">
+          <!-- <div formArrayName="skills">
             <div
               *ngFor="
-                let skill of employeeSkills(empIndex).controls;
+                let skill of employeeSkills(parIndex).controls;
                 let skillIndex = index
               "
             >
@@ -246,35 +351,52 @@
                 Exp:
                 <input type="text" formControlName="exp" />
 
-                <button (click)="removeEmployeeSkill(empIndex, skillIndex)">
+                <button (click)="removeEmployeeSkill(parIndex, skillIndex)">
                   Remove
                 </button>
               </div>
             </div>
           </div>
-          <button type="button" (click)="addEmployeeSkill(empIndex)">
+          <button type="button" (click)="addEmployeeSkill(parIndex)">
             Add Skill
-          </button>
+          </button> -->
+        </div>
+        <div class="button" *ngIf="isMinor && parIndex < 2 && last">
+          <input type="submit" (click)="addEmployee()" value="Add More" />
+        </div>
+      </div>
+    </div>
+    <div class="input-box">
+      <input
+        type="checkbox"
+        formControlName="acceptTerms"
+        placeholder="Confirm your Password"
+        required
+      />
+      <span class="details term">Accept All Term && Condition</span>
+      <div
+        class="error-message"
+        *ngIf="
+          (registrationForm.get('acceptTerms')?.touched || isSubmitted) &&
+          registrationForm.get('acceptTerms')?.invalid
+        "
+      >
+        <div *ngIf="registrationForm.get('acceptTerms')?.hasError('required')">
+          Term && Condition is required.
         </div>
       </div>
     </div>
     <div class="button">
+      <!-- <div class="button" *ngIf="isMinor">
+        <input
+          type="submit"
+          (click)="addEmployee()"
+          value="Add Employee 222"
+        />
+      </div> -->
       <input
         type="submit"
-        *ngIf="isRegistrationComplete"
-        (click)="addEmployee()"
-        value="Add Employee"
-      />
-      <input
-        *ngIf="!isRegistrationComplete"
-        type="submit"
-        value="Register"
-        (click)="onSubmit()"
-      />
-      <input
-        *ngIf="isRegistrationComplete"
-        type="submit"
-        value="Add Nominator"
+        [value]="isMinor ? 'Save Details' : 'Register'"
         (click)="onSubmit()"
       />
     </div>

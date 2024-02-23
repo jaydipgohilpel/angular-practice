@@ -7,17 +7,12 @@
   />
   <span>Welcome</span>
   <div class="spacer"></div>
-
+  <span style="float: right; margin-right: 25px">
+    <a [routerLink]="'/'" class="view-data"> Form </a>
+    <a [routerLink]="'/view-data'" class="view-data"> View Data </a></span
+  >
 </div>
 
 <div class="content" role="main">
   <router-outlet></router-outlet>
 </div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

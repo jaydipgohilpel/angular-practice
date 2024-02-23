@@ -49,6 +49,7 @@ body {
 form .user-details .input-box {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
+  min-width: 290px;
 }
 
 .user-details .input-box input {
@@ -74,8 +75,18 @@ form .user-details .input-box {
   transition: all .3s ease;
 }
 
+.custom-button {
+  width: 120px
+}
+
 .user-details .input-box input:focus {
   border-color: #9B59B6;
+}
+
+.minor {
+  color: green;
+  padding-top: 5px;
+  font-size: 17px;
 }
 
 // .user-details .input-box input:valid {
@@ -132,7 +143,7 @@ form input[type="radio"] {
 
 form .button {
   height: 45px;
-  margin: 45px 0;
+  // margin: 45px 0;
 }
 
 form .button input {
@@ -147,7 +158,7 @@ form .button input {
   border-radius: 5px;
   letter-spacing: 1px;
   background: linear-gradient(135deg, #71B7E6, #9B59B6);
-  margin: 10px;
+  margin: 10px 0;
 }
 
 form .button input:hover {
@@ -164,5 +175,6 @@ form .button input:hover {
 
 .notine-group {
   border: 1px solid blue;
+  margin: 10px;
   padding: 10px;
 }
