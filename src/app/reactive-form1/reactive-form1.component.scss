@@ -74,10 +74,13 @@ form .user-details .input-box {
   transition: all .3s ease;
 }
 
-.user-details .input-box input:focus,
-.user-details .input-box input:valid {
+.user-details .input-box input:focus {
   border-color: #9B59B6;
 }
+
+// .user-details .input-box input:valid {
+//   border-color: #cbb3d5;
+// }
 
 form .gender-details .gender-title {
   font-size: 20px;
@@ -144,6 +147,7 @@ form .button input {
   border-radius: 5px;
   letter-spacing: 1px;
   background: linear-gradient(135deg, #71B7E6, #9B59B6);
+  margin: 10px;
 }
 
 form .button input:hover {
@@ -156,4 +160,9 @@ form .button input:hover {
 
 .term {
   margin-left: 5px;
+}
+
+.notine-group {
+  border: 1px solid blue;
+  padding: 10px;
 }

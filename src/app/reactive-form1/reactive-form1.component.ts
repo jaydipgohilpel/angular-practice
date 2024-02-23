@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfirmPasswordValidator } from './validation';
 
 @Component({
@@ -40,7 +40,8 @@ export class ReactiveForm1Component implements OnInit {
         phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.minLength(10), Validators.maxLength(10),
         Validators.maxLength(10)]],
         gender: ['', Validators.required,],
-        acceptTerms: [false, Validators.requiredTrue]
+        acceptTerms: [false, Validators.requiredTrue],
+        employees: this.fb.array([])
       },
       {
         validator: ConfirmPasswordValidator("password", "confirmPassword")
@@ -61,14 +62,55 @@ export class ReactiveForm1Component implements OnInit {
     return this.registrationForm.get('userName');
   }
 
+  employees(): FormArray {
+    return this.registrationForm.get('employees') as FormArray;
+  }
+
+  addEmployee() {
+    this.employees().push(this.newEmployee());
+  }
+
+
+  newEmployee(): FormGroup {
+    return this.fb.group({
+      firstName: '',
+      lastName: '',
+      skills: this.fb.array([])
+    });
+  }
+
+  removeEmployee(empIndex: number) {
+    this.employees().removeAt(empIndex);
+  }
+  employeeSkills(empIndex: number): FormArray {
+    return this.employees()
+      .at(empIndex)
+      .get('skills') as FormArray;
+  }
+
+  newSkill(): FormGroup {
+    return this.fb.group({
+      skill: '',
+      exp: ''
+    });
+  }
+
+  addEmployeeSkill(empIndex: number) {
+    this.employeeSkills(empIndex).push(this.newSkill());
+  }
+
+  removeEmployeeSkill(empIndex: number, skillIndex: number) {
+    this.employeeSkills(empIndex).removeAt(skillIndex);
+  }
+
   control(key: string): FormControl {
     return this.registrationForm.get(key) as FormControl;
   }
 
   onSubmit(): void {
     this.isSubmitted = true;
-    if (this.registrationForm.invalid) return;
-    this.isRegistrationComplete = true;
+    // if (this.registrationForm.invalid) return;
+    this.isRegistrationComplete = !this.isRegistrationComplete
     console.log(JSON.stringify(this.registrationForm.value, null, 2));
   }
 
