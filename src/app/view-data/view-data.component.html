@@ -1,41 +1,138 @@
-<table>
-  <thead>
-    <tr>
-      <th>Full Name</th>
-      <th>Username</th>
-      <th>Email</th>
-      <th>Date of Birth</th>
-      <th>Gender</th>
-      <th>Patent Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let employee of employees">
-      <td>{{ employee.fullName }}</td>
-      <td>{{ employee.userName }}</td>
-      <td>{{ employee.email }}</td>
-      <td>{{ employee.dob }}</td>
-      <td>{{ employee.gender }}</td>
-      <td>
-        <table>
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Phone Number</th>
-              <th>Adhar Number</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let patentDetail of employee.patentDetails">
-              <td>{{ patentDetail.firstName }}</td>
-              <td>{{ patentDetail.lastName }}</td>
-              <td>{{ patentDetail.phoneNumber }}</td>
-              <td>{{ patentDetail.adharNumber }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      tr:hover {
+        background-color: #ddd;
+      }
+      @media only screen and (max-width: 600px) {
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          display: block;
+        }
+        thead tr {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+        }
+        tr {
+          border: 1px solid #ccc;
+        }
+        td {
+          border: none;
+          border-bottom: 1px solid #eee;
+          /* position: relative;
+        padding-left: 50%; */
+        }
+        td:before {
+          /* position: absolute; */
+          /* top: 6px; */
+          left: 6px;
+          /* width: 45%; */
+          padding-right: 10px;
+          white-space: nowrap;
+        }
+        td:nth-of-type(1):before {
+          content: "Full Name";
+        }
+        td:nth-of-type(2):before {
+          content: "Username";
+        }
+        td:nth-of-type(3):before {
+          content: "Email";
+        }
+        td:nth-of-type(4):before {
+          content: "DOB";
+        }
+        td:nth-of-type(5):before {
+          content: "Password";
+        }
+        td:nth-of-type(6):before {
+          content: "Confirm Password";
+        }
+        td:nth-of-type(7):before {
+          content: "Phone Number";
+        }
+        td:nth-of-type(8):before {
+          content: "Gender";
+        }
+        td:nth-of-type(9):before {
+          content: "Accept Terms";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>DOB</th>
+          <th>Password</th>
+          <th>Confirm Password</th>
+          <th>Phone Number</th>
+          <th>Gender</th>
+          <th>Accept Terms</th>
+          <th>Patent Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.fullName }}</td>
+          <td>{{ employee.userName }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.dob }}</td>
+          <td>{{ employee.password }}</td>
+          <td>{{ employee.confirmPassword }}</td>
+          <td>{{ employee.phoneNumber }}</td>
+          <td>{{ employee.gender }}</td>
+          <td>{{ employee.acceptTerms }}</td>
+          <td>
+            <table>
+              <thead>
+                <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Phone Number</th>
+                  <th>Adhar Number</th>
+                  <th>Skills</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let nestedEmployee of employee.patentDetails">
+                  <td>{{ nestedEmployee.firstName }}</td>
+                  <td>{{ nestedEmployee.lastName }}</td>
+                  <td>{{ nestedEmployee.phoneNumber }}</td>
+                  <td>{{ nestedEmployee.adharNumber }}</td>
+                  <td>{{ nestedEmployee.skills }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
