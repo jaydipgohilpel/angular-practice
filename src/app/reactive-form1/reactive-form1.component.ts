@@ -10,6 +10,7 @@ import { ConfirmPasswordValidator } from './validation';
 export class ReactiveForm1Component implements OnInit {
   registrationForm!: FormGroup;
   isSubmitted = false;
+  isRegistrationComplete = false;
 
   constructor(private fb: FormBuilder) { }
 
@@ -67,6 +68,7 @@ export class ReactiveForm1Component implements OnInit {
   onSubmit(): void {
     this.isSubmitted = true;
     if (this.registrationForm.invalid) return;
+    this.isRegistrationComplete = true;
     console.log(JSON.stringify(this.registrationForm.value, null, 2));
   }
 

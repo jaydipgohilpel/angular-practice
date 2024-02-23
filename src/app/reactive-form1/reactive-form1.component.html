@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="title">Registration</div>
   <form [formGroup]="registrationForm">
-    <div class="user-details">
+    <div class="user-details" *ngIf="!isRegistrationComplete">
       <div class="input-box">
         <span class="details">Full Name</span>
         <input
@@ -173,16 +173,16 @@
           <span class="dot three"></span>
           <span class="gender">Prefer Not to say</span>
         </label>
-      </div>
-      <div
-        class="error-message"
-        *ngIf="
-          (registrationForm.get('gender')?.touched || isSubmitted) &&
-          registrationForm.get('gender')?.invalid
-        "
-      >
-        <div *ngIf="registrationForm.get('gender')?.hasError('required')">
-          Gender is required.
+        <div
+          class="error-message"
+          *ngIf="
+            (registrationForm.get('gender')?.touched || isSubmitted) &&
+            registrationForm.get('gender')?.invalid
+          "
+        >
+          <div *ngIf="registrationForm.get('gender')?.hasError('required')">
+            Gender is required.
+          </div>
         </div>
       </div>
     </div>
@@ -207,7 +207,18 @@
       </div>
     </div>
     <div class="button">
-      <input type="submit" value="Register" (click)="onSubmit()" />
+      <input
+        *ngIf="!isRegistrationComplete"
+        type="submit"
+        value="Register"
+        (click)="onSubmit()"
+      />
+      <input
+        *ngIf="isRegistrationComplete"
+        type="submit"
+        value="Add Nominator"
+        (click)="onSubmit()"
+      />
     </div>
   </form>
 </div>
