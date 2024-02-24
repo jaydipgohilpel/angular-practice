@@ -3,8 +3,10 @@ https://stackblitz.com/edit/angular-nested-formarray-dynamic-forms?file=src%2Fap
 https://stackblitz.com/edit/angular-nested-formarray-dynamic-forms?file=src%2Fapp%2Fapp.component.html
 https://stackblitz.com/edit/angular-nested-formarray-dynamic-forms?file=src%2Fapp%2Fapp.component.html
 https://stackblitz.com/edit/angular-nested-formarray-dynamic-forms?file=src%2Fapp%2Fapp.component.html
-https://stackblitz.com/edit/angular-nested-formarray-dynamic-forms?file=src%2Fapp%2Fapp.component.html
-https://stackblitz.com/edit/angular-nested-formarray-dynamic-forms?file=src%2Fapp%2Fapp.component.html
+https://www.tektutorialshub.com/angular/nested-formarray-example-add-form-fields-dynamically/
+https://www.tektutorialshub.com/angular/nested-formarray-example-add-form-fields-dynamically/
+https://www.tektutorialshub.com/angular/nested-formarray-example-add-form-fields-dynamically/
+https://www.tektutorialshub.com/angular/nested-formarray-example-add-form-fields-dynamically/
 # AngularPractice
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
