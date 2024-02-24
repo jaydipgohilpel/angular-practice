@@ -20,4 +20,25 @@ export class ReadJsonDataComponent implements OnInit {
         this.data = data;
       });
   }
+  addUser() {
+    const user = { name: 'John Doe', email: 'john@example.com' };
+    this.http.post(this.url, user)
+      .subscribe((data: any) => {
+        console.log('User added successfully:', data);
+      });
+  }
+  deleteUser(userId: number) {
+    this.http.delete(`${this.url}/${userId}`)
+      .subscribe((data: any) => {
+        console.log('User deleted successfully:', data);
+      });
+  }
+  updateUser(userId: number) {
+    const updatedUser = { email: 'updated@example.com' };
+    this.http.put(`${this.url}/${userId}`, updatedUser)
+      .subscribe((data: any) => {
+        console.log('User updated successfully:', data);
+      });
+  }
+
 }
