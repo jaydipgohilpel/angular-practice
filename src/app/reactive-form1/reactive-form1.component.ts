@@ -73,7 +73,7 @@ export class ReactiveForm1Component implements OnInit {
     } else {
       this.isMinor = true;
       this.patentDetails().clear();
-      this.addEmployee(); // Clear the existing form array
+      this.addParentDetails(); // Clear the existing form array
     }
   }
 
@@ -82,12 +82,12 @@ export class ReactiveForm1Component implements OnInit {
     return this.registrationForm.get('patentDetails') as FormArray;
   }
 
-  addEmployee() {
-    this.patentDetails().push(this.newEmployee());
+  addParentDetails() {
+    this.patentDetails().push(this.newParentDetails());
   }
 
 
-  newEmployee(): FormGroup {
+  newParentDetails(): FormGroup {
     return this.fb.group({
       firstName: ['', Validators.required],
       lastName: [''],
@@ -97,7 +97,7 @@ export class ReactiveForm1Component implements OnInit {
     // skills: this.fb.array([])
   }
 
-  removeEmployee(empIndex: number) {
+  removeParentDetails(empIndex: number) {
     this.patentDetails().removeAt(empIndex);
   }
 

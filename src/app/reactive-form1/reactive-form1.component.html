@@ -332,7 +332,7 @@
 
           <div class="button custom-button">
             <input
-              (click)="removeEmployee(parIndex)"
+              (click)="removeParentDetails(parIndex)"
               *ngIf="!first"
               value="Remove"
             />
@@ -362,7 +362,7 @@
           </button> -->
         </div>
         <div class="button" *ngIf="isMinor && parIndex < 2 && last">
-          <input type="submit" (click)="addEmployee()" value="Add More" />
+          <input type="submit" (click)="addParentDetails()" value="Add More" />
         </div>
       </div>
     </div>
