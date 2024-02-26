@@ -1,0 +1,203 @@
+What is Angular?
+
+Angular is a JavaScript framework for building dynamic web applications.
+What are Angular advantages?
+
+Angular offers features like two-way data binding, dependency injection, and a modular structure that make building complex applications easier.
+What is the difference between AngularJS and Angular?
+
+AngularJS is the older version of Angular, while Angular is the newer, rewritten version. Angular is more modular and supports modern browser features.
+What is NPM?
+
+NPM stands for Node Package Manager. It is a package manager for JavaScript that is used to install and manage dependencies for projects.
+What is CLI tool?
+
+CLI stands for Command Line Interface. In the context of Angular, the CLI tool is used to create, build, and manage Angular projects.
+What are Components in Angular?
+
+Components are the building blocks of an Angular application. They are responsible for rendering the UI and handling user input.
+What is a Selector and Template?
+
+The Selector is a CSS selector that matches the HTML element which the Component is applied to. The Template is the HTML markup that defines the Component's view.
+What is Module in Angular? What is app.module.ts file?
+
+A Module is a collection of components, directives, and services. It is a logical unit of an application. The app.module.ts file is the main module file in an Angular application.
+How an Angular App gets Loaded and Started? What are index.html, app-root, selector, and main.ts?
+
+An Angular app starts with the index.html file, which contains the app-root element. This element is the root component of the Angular application. The main.ts file is the entry point of the Angular application and bootstraps the AppModule.
+What is a Bootstrapped Module & Bootstrapped Component?
+
+A Bootstrapped Module is the top-level module that is responsible for starting the Angular application. The Bootstrapped Component is the root component of the Bootstrapped Module.
+What is Data Binding in Angular?
+
+Data Binding in Angular is the process of synchronizing the data between the UI and the component's properties.
+What is String Interpolation in Angular?
+
+String Interpolation in Angular is a way to bind data from a component to the HTML template using curly braces {{ }}.
+What is Property Binding in Angular?
+
+Property Binding in Angular is a way to set the properties of an HTML element based on the component's properties.
+What is Event Binding in Angular?
+
+Event Binding in Angular is a way to listen for events from the HTML template and execute methods in the component when the event occurs.
+What is Two-way Binding in Angular?
+
+Two-way Binding in Angular is a combination of Property Binding and Event Binding, where changes in the UI update the component's properties and changes in the component's properties update the UI.
+What are Directives? What are the types of directives?
+
+Directives are instructions in the DOM that tell Angular how to modify the behavior or appearance of an HTML element. There are three types of directives in Angular: Component Directives, Structural Directives, and Attribute Directives.
+What is \*ngIf Structural directive?
+
+The *ngIf directive is a Structural directive that conditionally adds or removes an element from the DOM based on a condition.
+What is *ngFor Structural directive?
+
+The *ngFor directive is a Structural directive that iterates over a collection and creates a template for each item.
+What is *ngSwitch Structural directive?
+
+The \*ngSwitch directive is a Structural directive that conditionally displays one of multiple possible elements based on a switch condition.
+What is [ngStyle] Attribute directive?
+
+The [ngStyle] directive is an Attribute directive that dynamically sets styles on an HTML element based on the component's properties.
+What is [ngClass] Attribute directive?
+
+The [ngClass] directive is an Attribute directive that dynamically adds or removes CSS classes from an HTML element based on the component's properties.
+What is the difference between Component, Attribute, and Structural Directives?
+
+Components are directives with a template. Attribute directives change the appearance or behavior of an element, component, or another directive. Structural directives change the DOM layout by adding or removing elements.
+What is Decorator?
+
+A Decorator is a special kind of declaration that can be attached to a class declaration, method, accessor, property, or parameter.
+What are the types of Decorator?
+
+There are several types of Decorators in Angular, such as Class Decorators, Property Decorators, Method Decorators, and Parameter Decorators.
+What are Pipes? What are the types of Pipes & Parameterized Pipes?
+
+Pipes in Angular are used to transform data before displaying it in the UI. There are two types of Pipes: built-in Pipes and custom Pipes. Built-in Pipes include DatePipe, UpperCasePipe, LowerCasePipe, and others. Custom Pipes are created by developers.
+What is Chaining Pipes?
+
+Chaining Pipes is a way to apply multiple Pipes to a value in Angular. This is done by chaining the Pipes together using the | operator.
+Explain Services with an Example?
+
+Services in Angular are a way to share code and data between different parts of an application. They are singleton objects that are injected into components, directives, and other services. For example, a UserService might provide methods for managing user data.
+How to create Service in Angular?
+
+To create a Service in Angular, you create a new TypeScript class and decorate it with the @Injectable() decorator. You then provide the Service in the providers array of a module or component.
+How to use Dependency Injector with Services in Angular?
+
+Angular's Dependency Injector is responsible for creating instances of Services and providing them to components that request them. You can use the @Injectable() decorator to tell Angular to inject dependencies into a Service's constructor.
+What is Hierarchical Dependency Injection?
+
+Hierarchical Dependency Injection is a feature of Angular that allows you to provide different instances of a Service at different levels of the application. This can be useful when you want to have different configurations or implementations of a Service in different parts of the application.
+What is Provider in Angular?
+
+In Angular, a Provider is a configuration object that tells Angular how to create or provide a Service. Providers can be registered at the module or component level.
+What is the role of @Injectable Decorator in a Service?
+
+The @Injectable() decorator tells Angular that a class is a Service and that it should be injected into other components or services.
+What are Parent-Child Components?
+
+Parent-Child Components are components that are nested inside each other. The parent component is the parent of the child component, and the child component is the child of the parent component.
+What are Lifecycle Hooks in Angular?
+
+Lifecycle Hooks in Angular are methods that are called at specific times during the lifecycle of a component. They allow you to perform actions at certain points in the component's lifecycle, such as when it is created, rendered, or destroyed.
+What is a Constructor in Angular?
+
+A Constructor is a special method in a TypeScript class that is called when an instance of the class is created. In Angular, the constructor is often used for dependency injection.
+What is ngOnInit lifecycle hook in Angular?
+
+The ngOnInit lifecycle hook is a method that is called after Angular has initialized the component's data-bound properties and inputs. It is often used to perform initialization tasks, such as fetching data from a server.
+What is the difference between constructor and ngOnInit?
+
+The constructor is a TypeScript class method that is called when an instance of the class is created. ngOnInit is an Angular lifecycle hook that is called after Angular has initialized the component's data-bound properties and inputs.
+What are Asynchronous operations?
+
+Asynchronous operations in Angular are operations that don't block the main execution thread. They allow you to perform tasks in the background while the application continues to run.
+What is the difference between Promise and Observable?
+
+A Promise is a one-time operation that resolves to a value or an error. An Observable is a stream of values that can change over time.
+What is RxJS?
+
+RxJS is a library for reactive programming using Observables. It allows you to work with asynchronous data streams and provides operators for transforming, filtering, and combining those streams.
+What is Observable? How to implement Observable
+
+An Observable is a stream of values that can change over time. In Angular, Observables are often used to represent asynchronous data streams. To create an Observable, you can use the Observable.create() method or one of the creation functions provided by RxJS, such as of(), from(), or interval().
+What is the role of HttpClient in Angular?
+
+The HttpClient is a built-in Angular service that allows you to make HTTP requests to a server. It provides methods for making GET, POST, PUT, DELETE, and other types of requests, as well as methods for configuring request headers and handling response data.
+What is Typescript? Or What is the difference between Typescript and Javascript?
+
+TypeScript is a superset of JavaScript that adds static typing and other features to the language. It is compiled to JavaScript, so it can run in any JavaScript environment.
+What is the difference between let and var keyword?
+
+The let keyword is used to declare block-scoped variables, while the var keyword is used to declare function-scoped variables.
+What is Type annotation?
+
+Type annotation in TypeScript is a way to specify the data type of a variable or parameter. It is used to provide static type checking and improve code readability.
+What are Built-in/ Primitive and User-Defined/ Non-primitive Types in Typescript?
+
+Built-in or Primitive types in TypeScript are types that are built into the language, such as number, string, boolean, and void. User-defined or Non-primitive types are types that are defined by the user, such as class, interface, enum, and function.
+What is “any” type in Typescript?
+
+The any type in TypeScript is a dynamic type that can represent any value. It is often used when the type of a value is not known at compile time or when working with data from an external source.
+What is Enum type in Typescript?
+
+An Enum in TypeScript is a way to define a set of named constants. It allows you to assign names to numeric values, making your code more readable and maintainable.
+What is Type Assertion in Typescript?
+
+Type Assertion in TypeScript is a way to tell the compiler that you know more about the type of a variable than it does. It is used to override the default type inference behavior of the compiler.
+What are Arrow Functions in Typescript?
+
+Arrow Functions in TypeScript are a shorthand syntax for defining anonymous functions. They are used to create functions that are concise and easy to read.
+
+What is Routing in Angular?
+
+Routing in Angular is a mechanism that allows you to navigate between different components in a single-page application. It is used to define the mapping between URLs and components, and to handle navigation events.
+What is Lazy Loading in Angular?
+
+Lazy Loading in Angular is a technique that allows you to load modules and components on demand, instead of loading everything up front. This can improve the performance of your application, especially for large applications with many features.
+What is Dependency Injection in Angular?
+
+Dependency Injection in Angular is a design pattern that allows you to inject dependencies into a class instead of creating them inside the class. It is used to manage the dependencies between different parts of an application and to make it easier to test and maintain the code.
+What is Angular Material?
+
+Angular Material is a UI component library for Angular that provides a set of reusable UI components, such as buttons, cards, and input fields. It is designed to help you build beautiful and responsive web applications.
+What is Angular CLI?
+
+Angular CLI (Command Line Interface) is a command-line tool that helps you to scaffold, build, and maintain Angular applications. It provides a set of commands for creating components, services, modules, and other Angular artifacts.
+What is Angular Universal?
+
+Angular Universal is a technology that allows you to render Angular applications on the server side. This can improve the performance of your application, especially for search engine optimization (SEO) and for users with slow internet connections.
+What is Angular Directives?
+
+Angular Directives are instructions in the DOM that tell Angular how to modify the behavior or appearance of an HTML element. They can be classified into three types: component directives, structural directives, and attribute directives.
+What is Angular Change Detection?
+
+Angular Change Detection is a mechanism that detects changes in the application state and updates the view accordingly. It is responsible for keeping the view in sync with the data model and for triggering the necessary updates when the data changes.
+What is Angular Forms?
+
+Angular Forms are a set of directives and services that allow you to build and validate forms in Angular applications. They provide a way to manage user input and to communicate with the server.
+What is Angular Testing?
+
+Angular Testing is a set of tools and techniques for testing Angular applications. It includes unit testing, integration testing, and end-to-end testing, and provides a way to ensure that your application works as expected and is free of bugs.
+
+What is Angular Ivy?
+
+Angular Ivy is the latest rendering engine in Angular, introduced in Angular 9. It improves the performance and size of Angular applications by making them more tree-shakable, meaning that it removes any unused code from the final bundle.
+What is Angular Elements?
+
+Angular Elements is a feature in Angular that allows you to package Angular components as custom elements (also known as web components). This allows you to use Angular components in non-Angular applications or in environments that do not support Angular.
+What is Angular Interceptors?
+
+Angular Interceptors are a feature in Angular that allow you to intercept HTTP requests and responses. They can be used for tasks such as adding headers to requests, logging requests and responses, and handling errors.
+What is Angular Pipes?
+
+Angular Pipes are a feature in Angular that allow you to transform data in your templates. They are used to format and manipulate data before it is displayed in the UI.
+What is Angular Services?
+
+Angular Services are a feature in Angular that allow you to share data and logic between different parts of your application. They are used to encapsulate reusable functionality and to keep your components lean and focused on UI concerns.
+What is Angular Modules?
+
+Angular Modules are a feature in Angular that allow you to organize your application into separate, reusable pieces. They are used to group related components, directives, pipes, and services, and to define the dependencies between them.
+What is Angular NgRx?
+
+NgRx is a library for managing state in Angular applications. It is based on the Redux pattern and provides a set of tools and conventions for managing state in a predictable and testable way.

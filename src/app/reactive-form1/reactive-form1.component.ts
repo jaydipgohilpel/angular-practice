@@ -11,6 +11,7 @@ import * as moment from 'moment';
 export class ReactiveForm1Component implements OnInit {
   registrationForm!: FormGroup;
   isSubmitted = false;
+  ddjdj = ''
   isMinor = false;
   maxDate = moment(new Date()).format('YYYY-MM-DD')
 

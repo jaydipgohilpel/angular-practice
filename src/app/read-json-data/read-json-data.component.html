@@ -1,3 +1,12 @@
 <p>read-json-data works!</p>
 data:
 <p>{{ data | json }}</p>
+<div
+  id="drop-zone"
+  (drop)="onDrop($event)"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave($event)"
+>
+  <input type="file" id="file-input" (change)="onFileSelected($event)" />
+  <p>Drag and drop files here or click to select files</p>
+</div>

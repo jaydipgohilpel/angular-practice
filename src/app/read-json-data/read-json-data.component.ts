@@ -41,4 +41,33 @@ export class ReadJsonDataComponent implements OnInit {
       });
   }
 
+
+  onDrop(event: DragEvent) {
+    event.preventDefault();
+    const files = event?.dataTransfer?.files;
+    this.handleFiles(files);
+  }
+
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+  }
+
+  onDragLeave(event: DragEvent) {
+    event.preventDefault();
+  }
+
+  onFileSelected(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    const files = inputElement.files;
+    this.handleFiles(files);
+  }
+
+  handleFiles(files: FileList | any) {
+    for (let i = 0; i < files.length; i++) {
+      const file = files;
+      console.log(file);
+      // Handle file upload logic here
+    }
+  }
+
 }
