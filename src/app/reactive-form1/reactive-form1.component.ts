@@ -166,3 +166,22 @@ export class ReactiveForm1Component implements OnInit {
 
 
 }
+
+
+// userForm = new FormGroup({
+//   user_id: new FormControl("", Validators.required),
+//   user_position: new FormControl("", Validators.required),
+//   phone: new FormControl("", [Validators.required, this.phoneValidator]),
+//   email: new FormControl("", [
+//     Validators.required,
+//     Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"),
+//   ]),
+//   user_name: new FormControl("", Validators.required),
+// });
+
+// phoneValidator(control: FormControl) {
+//   const phoneNumberPattern = /^(\d{2,3})-(\d{4})-(\d{4})$/;
+//   return phoneNumberPattern.test(control.value)
+//     ? null
+//     : { invalidPhone: true };
+// }
