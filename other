@@ -1,0 +1,20 @@
+
+Hi, I have reviewed your PDF about the project flow and screens and also checked code quality and logic. Code is very simple and easy to understanding.
+1. Environment detection - Detector infromation/graph (환경감지)————————————I can see that there is a filter range to show data between two dates which is selected by user. In Left Side of this page there is one dropdown to show data based on dropdown selection, correct me If I am wrong in this point and for the right side I need to show temperature and humidity data into chart which is coming from database year wise.Question 1 =>  In chart UI there are 3 different colours into chart so Can you please provide me which categories data need to show in this chart?Question: 2 => Do we need to use any specific library for chart data? If yes so could you please provide me name so we can implement chart as well?2. History Information Page (감지기 이력정보)————————————
+In second page I have to show history information which is dependent on filter dropdown which is declared in left side of the page. In right side of the page I need to show filter data between two dates same like page 1.Question: 1 => For history information page, we can see that there is a dropdown after date filter so Can you please explain me what is the use of that dropdown?
+   3. Alarm history page (알람 내역)————————————In this page, we need to show and filter alarm history based on two category wise data displaying and which is declared in documentation tab wise 1. Environment 2. Fire 4. Drawing Management Page (도면관리)————————————As per my understanding I need to show Drawing management data into  this page table with crud functionality with drag and drop coloured box which is display over image. Could you please explain this page in detail?
+5. Notification information setting page  (알림정보 설정)————————————
+User can add new notification with item name and person and User can edit / delete notifications any time with use of action button.when you add search text and click on search button so, that wise data will be show.6. User settings page  (사용자 설정)————————————we can add new user with fields of UserID, name, authority, Phone Number and email. We can edit and delete user row with action button of user table. Question  1 => When user click on +add button Do we need to show popup for add new user? because I checked existing code I can see that when user click on +add button and new row added into table.Everything looks good for me.
+Backend Question:-I have setup backend as well and it’s also working fine just I have an one question:-
+-> Do we need to make authentication for the Postgrest?
+IP : d
+PC Name : d
+User Name : d
+Monitor :hp M22f
+Keyboard : logitech
+Mouse :logitech
+With who shared UPS : no
+Processor : Intel(R) Core(TM) i5-10400F CPU @ 2.90GHz   2.90 GHz
+RAM : 16.0 GB
+Storage (SSD, HDD) : SSD 256GB
+OS Version : Windows 10 Pro

@@ -1,0 +1,479 @@
+password:- 886644
+
+
+
+
+<------------------------------------- -Bootstrap Link- ------------------------------------->
+
+<link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+ <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+
+
+<-------------------------------------- -Font Awesome Link- --------------------------------------------->
+
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+
+<--------------------------------------- -React Js Command- ------------------------------------->
+
+npx create-react-app my-app
+npm uninstall -g create-react-app
+npm i // node modules install //
+
+
+<-------------------------------- -Material mui- ------------------------------->
+
+npm install @mui/material @emotion/react @emotion/styled
+
+npm install @mui/icons-material
+
+
+
+DK class
+
+
+<-----------------------------------------JavaScript Link---------------------------------------------->
+
+https://dev.to/thedevdrawer/login-validation-authentication-using-vanilla-javascript-4i45
+https://www.youtube.com/watch?v=Rrbwrk79WTw&t=2s
+https://www.youtube.com/watch?v=JmSb1VFoP7w
+https://medium.com/altcampus/implementing-simple-spa-routing-using-vanilla-javascript-53abe399bf3c
+
+Number formet :- oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+Email formet :- let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+
+var myModalEl = document.getElementById("exampleModal");
+    var modal = bootstrap.Modal.getInstance(myModalEl);
+    modal.hide();
+
+if (password.match(/[0-9]/)) {
+    numbers.style.color = "green";
+  } else {
+    numbers.style.color = "red";
+  }
+  if (password.match(/[A-Z]/)) {
+   return uppers.style.color = "green";
+  } else {
+    uppers.style.color = "red";
+  }
+  if (password.match(/[a-z]/)) {
+    lowers.style.color = "green";
+  } else {
+    lowers.style.color = "red";
+  }
+  if (password.match(/[!\@\#\$\%\^\&\*\(\)\_\-\+\=\?\>\<\.\,]/)) {
+    spical_chars.style.color = "green";
+  } else {
+    spical_chars.style.color = "red";
+  }
+  if (password.length < 8) {
+    numbers.style.color = "red";
+  } else {
+    numbers.style.color = "green";
+  }
+
+
+/^(?=.*?[0-9])(?=.*?[A-Z])(?=.*?[#?!@$%^&*\\-_]).{8,}$/
+
+
+
+
+<div class="card-body card border-0">
+                  <h5 class="card-title mb-4">
+                  </h5>
+                  <hr class="m-0 mb-2" />
+                  <p class="card-text m-0">
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center mt-2"
+                  >
+                    <div>
+                      <p class="m-0 button-working">
+                        <i class="fa-solid fa-money-bill-trend-up"></i> Working
+                      </p>
+                    </div>
+                    <div><p class="m-0 todat-text">Today, 15:24</p></div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+
+
+<div class="note">
+                        <div class="details">
+                            <p>${note.title}</p>
+                            <span>${filterDesc}</span>
+                        </div>
+                        <div class="bottom-content">
+                            <span></span>
+                            <div class="settings">
+                                <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
+                                <div class="menu">
+                                    <div onclick="updateNote(${id}, '${note.title}', '${filterDesc}')"><i class="uil uil-pen"></i>Edit</div>
+                                    <div onclick="deleteNote(${id})"><i class="uil uil-trash"></i>Delete</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+ let confirmDel = confirm("Are you sure you want to delete this note?");
+  if (!confirmDel) return;
+  notes.splice(noteId, 1);
+  localStorage.setItem("notes", JSON.stringify(notes));
+  showNotes();
+
+
+
+let arrayid = [];
+
+function deleteNote(noteId) {
+  arrayid.shift();
+  arrayid.push(noteId);
+  addBox.click();
+}
+
+
+function deletefu() {
+  let idget = arrayid[0];
+  if (idget === undefined) {
+    alert("Please select note");
+    closeIcon.click();
+  } else {
+    let confirmDel = confirm("Are you sure you want to delete this note?");
+    if (!confirmDel) return;
+    notes.splice(idget, 1);
+    localStorage.setItem("notes", JSON.stringify(notes));
+    closeIcon.click();
+    arrayid = [];
+    showNotes();
+  }
+}
+
+
+// SEARCH FILTER
+const search = document.getElementById("search");
+const productName = document.querySelectorAll(".product-details h2"); // html tage
+
+// A BETTER WAY TO FILTER THROUGH THE PRODUCTS
+search.addEventListener("keyup", filterProducts);
+
+
+function filterProducts(e) {
+    const text = e.target.value.toLowerCase();
+    // console.log(text);
+    // console.log(productName[0]);
+    productName.forEach(function(product) {
+        console.log(product);
+        const item = product.firstChild.textContent;
+        console.log(item);
+        if (item.toLowerCase().indexOf(text) != -1) {
+            product.parentElement.parentElement.style.display = "block"
+        } else {
+            product.parentElement.parentElement.style.display = "none"
+        }
+    })
+}
+
+
+
+
+
+https://codepen.io/myacode/pen/ExPOdBd
+
+https://codepen.io/thomasrodriguez/pen/NWNxzeJ
+
+
+
+
+
+gender
+https://www.youtube.com/watch?v=MBUc-hfxB2s&ab_channel=Bharaththippireddy
+
+
+
+
+
+
+
+
+let acnumber = document.getElementById("acnumber").value;
+  let cvv = document.getElementById("cvv").value;
+  let mmdate = document.getElementById("mmDate").value;
+  let yydate = document.getElementById("yyDate").value;
+
+  if (acnumber.length === 25) {
+    document.getElementById("cvv").focus();
+  } else {
+    document.getElementById("cvv")?.focus(acnumber);
+  }
+  if (cvv.length === 4) {
+    document.getElementById("mmDate").focus();
+  } else {
+    document.getElementById("mmDate")?.focus(cvv);
+  }
+  if (mmdate.length === 2) {
+    document.getElementById("yyDate").focus();
+  } else {
+    document.getElementById("yyDate")?.focus(mmdate);
+  }
+  if (yydate.length === 4) {
+    document.getElementById("password")?.focus();
+  } else {
+    document.getElementById("password")?.focus(yydate);
+  }
+
+
+
+
+
+
+
+function submitEmployeeFunction() {
+  event.preventDefault();
+  employeeObject = {
+    employeeId: storeID.toString() || employeeUpdateId.toString(),
+    employeeName: employeeArray.toString(),
+  };
+let sdff = storeID.toString()
+   if(employeeObject.employeeId !== sdff){
+    console.log("employeeObject.employeeId !== storeID.toString()",employeeObject.employeeId !== storeID.toString());
+     console.log("False");
+   }else{
+    if (employeeArray.length > 0) {
+      if (!isUpdate) {
+        list.push(employeeObject);
+       console.log("Your Seat Is Selected");
+      } else {
+        isUpdate = false;
+        list[employeeIds] = employeeObject;
+       console.log("Data Edited");
+      }
+      localStorage.setItem("employeeObject", JSON.stringify(list));
+      document.getElementById("modal-2").checked = false;
+      employeeNameShowFunction();
+      listEmployeeFunction();
+      employeeNameListViewFunction();
+      swapListFunction();
+      employeeArray = [];
+    } else {
+     console.log("Plese Choose One Name");
+    }
+   }
+
+  document.getElementById("modal-2").checked = false;
+}
+
+
+
+
+
+
+
+
+
+js start input row
+
+let inputId = 1;
+let addButtonId = document.getElementById("addButtonId1");
+let inputDataArray = [];
+
+function AddNewInput(index) {
+  event.preventDefault();
+  inputId++;
+  let createNewElement = document.createElement("div");
+  createNewElement.id = "link" + inputId;
+
+  let linkHTML = `
+    <div id="inputValueGet" class="inputsBox">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="mb-3">
+            <label class="form-label">Floor Name</label>
+            <input type="text" class="form-control floorName inputFloorNameww inputGroup" placeholder="Floor Name">
+          </div>
+          <div class="mb-3 mx-3">
+            <label class="form-label">Total Slot</label>
+            <input type="number" class="form-control totleSlot inputTotleSlot inputTage inputGroup" placeholder="Total Slot">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Two-wheel Slot</label>
+            <input type="number" class="form-control twoWheelSlot inputTotleTwoWheelSlot inputTage inputGroup" placeholder="Two-wheel Slot">
+          </div>
+          <div class="mb-3 mx-3">
+            <label class="form-label">Four-wheel Slot</label>
+            <input type="number" class="form-control fourWheelSlot inputTotleFourWheelSlot inputTage inputGroup" placeholder="Four-wheel Slot">
+          </div>
+        </div>
+        <button class="buttonPlus" id="addButtonId${inputId}" onclick="AddNewInput(${inputId})">+</button>
+        <button id="removeInptRow${inputId}" style="display: none" class="buttonRemove" onclick="deleteInputRow(${inputId})">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  `;
+
+  createNewElement.innerHTML = linkHTML;
+  document.getElementById("newInput").appendChild(createNewElement);
+
+  if (index) {
+    let addButton = document.getElementById(`addButtonId${index}`);
+    let removeButton = document.getElementById(`removeInptRow${index}`);
+    addButton.style.display = "none";
+    removeButton.style.display = "inline";
+  }
+
+  if (inputId > 1) {
+    addButtonId.style.display = "none";
+  } else {
+    addButtonId.style.display = "inline";
+  }
+}
+
+function deleteInputRow(eleId) {
+  let ele = document.getElementById("link" + eleId);
+  ele.parentNode.removeChild(ele);
+
+  inputId--;
+
+  inputDataArray.forEach((inputDataObject) => {
+    inputDataObject.slotsArrays.splice(eleId - 1, 1);
+  });
+
+  for (let i = eleId + 1; i <= inputId + 1; i++) {
+    const currentEle = document.getElementById("link" + i);
+    currentEle.id = "link" + (i - 1);
+
+    const addButton = document.getElementById(`addButtonId${i}`);
+    addButton.href = "#";
+    addButton.setAttribute("onclick", `AddNewInput(${i - 1})`);
+    addButton.id = `addButtonId${i - 1}`;
+
+    const removeButton = document.getElementById(`removeInptRow${i}`);
+    removeButton.href = "#";
+    removeButton.setAttribute("onclick", `deleteInputRow(${i - 1})`);
+    removeButton.id = `removeInptRow${i - 1}`;
+  }
+
+  if (inputId > 1) {
+    addButtonId.style.display = "none";
+  } else {
+    addButtonId.style.display = "inline";
+  }
+}
+
+
+
+function inputDataSave() {
+  let inputParkingName = document.querySelector(".parkingInput").value;
+
+  if (inputParkingName !== "") {
+    let existingParking = inputDataArray.find(
+      (parking) => parking.parkingName === inputParkingName
+    );
+
+    if (existingParking) {
+      // If parking already exists, update its slots data
+      existingParking.slotsArrays = [];
+
+      for (let i = 1; i <= inputId; i++) {
+        let floorNameInput = document.querySelector(`#link${i} .floorName`).value;
+        let totleSlotInput = document.querySelector(`#link${i} .totleSlot`).value;
+        let totleTwoWheelSlotInput = document.querySelector(
+          `#link${i} .twoWheelSlot`
+        ).value;
+        let totleFourWheelSlotInput = document.querySelector(
+          `#link${i} .fourWheelSlot`
+        ).value;
+
+        if (
+          floorNameInput !== "" &&
+          totleSlotInput !== "" &&
+          totleTwoWheelSlotInput !== "" &&
+          totleFourWheelSlotInput !== ""
+        ) {
+          existingParking.slotsArrays.push({
+            floorName: floorNameInput,
+            totalSlot: totleSlotInput,
+            twoWheel: totleTwoWheelSlotInput,
+            fourWheel: totleFourWheelSlotInput,
+          });
+        } else {
+          console.log("Incomplete input at row " + i);
+        }
+      }
+    } else {
+      // If parking does not exist, create a new parking entry
+      const inputDataObject = {
+        parkingName: inputParkingName,
+        slotsArrays: [],
+      };
+
+      for (let i = 1; i <= inputId; i++) {
+        let floorNameInput = document.querySelector(`#link${i} .floorName`).value;
+        let totleSlotInput = document.querySelector(`#link${i} .totleSlot`).value;
+        let totleTwoWheelSlotInput = document.querySelector(
+          `#link${i} .twoWheelSlot`
+        ).value;
+        let totleFourWheelSlotInput = document.querySelector(
+          `#link${i} .fourWheelSlot`
+        ).value;
+
+        if (
+          floorNameInput !== "" &&
+          totleSlotInput !== "" &&
+          totleTwoWheelSlotInput !== "" &&
+          totleFourWheelSlotInput !== ""
+        ) {
+          inputDataObject.slotsArrays.push({
+            floorName: floorNameInput,
+            totalSlot: totleSlotInput,
+            twoWheel: totleTwoWheelSlotInput,
+            fourWheel: totleFourWheelSlotInput,
+          });
+        } else {
+          console.log("Incomplete input at row " + i);
+        }
+      }
+
+      inputDataArray.push(inputDataObject);
+    }
+  } else {
+    console.log("Parking Name is required!");
+  }
+}
+
+document
+  .getElementById("saveParkingData")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    inputDataSave();
+    console.log(inputDataArray);
+  });
+
+js and input row
+
+
