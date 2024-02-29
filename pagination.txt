@@ -1,0 +1,18 @@
+ <tr
+    *ngFor="
+        let item of tableData | slice : (page - 1) * pageSize : (page - 1) * pageSize + pageSize;
+        let i = index
+    "
+>
+
+
+  selectFilterdfdf(event: any): void {
+    this.take1 = 10;
+    this.skip1 = 0;
+    this.getfdfsdfsdfsd();
+  }
+
+  pageasdfasfaf(event: any) {
+    this.skip1 = this.take1 * event1 - 10;
+    this.getfdfsdfsdfsd();
+  }

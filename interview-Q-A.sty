@@ -201,3 +201,116 @@ Angular Modules are a feature in Angular that allow you to organize your applica
 What is Angular NgRx?
 
 NgRx is a library for managing state in Angular applications. It is based on the Redux pattern and provides a set of tools and conventions for managing state in a predictable and testable way.
+
+Difference between JavaScript and TypeScript:
+ TypeScript is a superset of JavaScript that adds static typing to the language.
+
+ Building Components of an Angular Application:
+Modules, Components, Directives, Pipes, Services.
+
+Types of Directives in Angular:
+Structural, Attribute, and Custom Directives.
+
+Purpose of ngOnDestroy in Angular:
+It is a lifecycle hook that is called before a component is destroyed, useful for cleanup tasks.
+
+Purpose of Selector in Angular:
+It's a decorator that associates a template with a component class.
+
+Creating a Custom Class in Angular:
+Define a class with properties and methods in a TypeScript file.
+
+Creating Custom Test Cases in Angular:
+Use Jasmine for unit testing and Protractor for end-to-end testing.
+
+Calling 10 APIs One by One in Angular:
+Use the HttpClient module and RxJS forkJoin to handle multiple HTTP requests.
+
+Using Services in Angular:
+Create a service class with the @Injectable() decorator, then inject it into a component or module.
+
+Purpose of Selector in Angular:
+It's a decorator that associates a template with a component class.
+
+Maintaining Security in Angular:
+Use authentication tokens and guards to control access to routes
+
+Injecting a Service into a Component in Angular:
+Declare the service as a provider in the component's @Component decorator and inject it into the constructor.
+
+Communication Between Two Components in Angular:
+Use services or observables to share data between components.
+
+If an Angular application is facing performance issues, several strategies can be employed to diagnose and address the problem. Some of the key steps to identify and mitigate performance issues include:
+
+    Performance Profiling: Use browser developer tools to profile the application's performance, identify bottlenecks, and evaluate the impact of changes.
+
+    Bundle Analysis: Analyze the application's bundle size and structure to optimize code splitting, lazy loading, and reduce unnecessary dependencies.
+
+    Code Optimization: Optimize JavaScript code, eliminate unused or dead code, use efficient algorithms, and minimize DOM manipulation.
+
+    Image Optimization: Optimize images for the web, use appropriate image formats, and consider lazy-loading images that are not immediately visible.
+
+    Network Optimization: Optimize network requests, minimize HTTP requests, and utilize efficient caching strategies.
+
+    Angular Performance Best Practices: Follow Angular's best practices, such as OnPush change detection strategy, trackBy function in ngFor loops, and using pure pipes.
+
+    Component Structure: Review the component hierarchy and ensure that components are structured optimally, avoiding unnecessary nesting and re-rendering.
+
+    Memory Leaks: Check for memory leaks, particularly in long-running applications or those that use extensive event listeners or subscriptions. Clean up resources appropriately.
+
+    Server-Side Rendering: Consider server-side rendering (SSR) to improve initial loading times and Time to First Meaningful Paint (TTFMP).
+
+    Browser Compatibility: Ensure compatibility with various browsers and devices, as browser differences can impact performance.
+
+    Lazy Loading: Use lazy loading for modules, routes, and components that are not immediately needed to reduce initial bundle size and speed up application loading times.
+
+    Data Transfer: Optimize data transfer between client and server, minimize payload size, and use compression techniques where appropriate.
+
+    Caching: Implement client-side and server-side caching strategies for static and dynamic content to reduce the number of requests and improve response times.
+
+    Optimize Rendering: Optimize rendering performance by using virtual scrolling, minimizing reflows, and avoiding heavy computation in the render loop.
+
+    Performance Monitoring: Continuously monitor application performance using tools like Lighthouse, Google PageSpeed Insights, and New Relic to identify and resolve issues.
+
+
+    Explanation of Yourself and Background in Angular:
+
+Answer: I am facing
+Angular Lifecycle Methods:
+
+Answer: Theconstructor, ngOnInit, ngOnChanges, ngAfterViewInit, 'nngAfterContentInit, 'nngAfterContentChecked, and ngOnDestroy. These methods are executed at different stages of a component's lifecycle.
+Directives in Angular:
+
+Answer: Angular has three types of directives: component, structural, and attribute directives. Component directives have a template, structural directives manipulate the DOM, and attribute directives change the appearance or behavior of an element.
+Creating Custom Directives:
+
+Answer: Yes, I have created custom directives. To create a custom directive, I used the Angular CLI command ng generate directive <directive-name> and then added the directive to the NgModule's declarations would
+Angular Project Role and Responsibilities:
+
+Answer: In the current project, I work with a team from Morgan Stanley, follow the Agile model, and participate in daily scrum meetings, grooming sessions, and retro meetings. I'm responsible for frontend development using Angular, and I also provide support for the Propulsion setting.
+RxJS Operators in Angular:
+
+Answer: In our project, we have used RxJS operators such as map, switchMap, range, replay, pipe, takeUntil, take, takeOne, takeUntil, and forkJoin. These operators are used for data manipulation and handling asynchronous operations.
+Angular Guards:
+
+**Years
+Data Sharing Among Components:
+
+Answer: In Angular, data sharing among components can be achieved using Input/Output bindings for parent-child communication, services for sharing data between unrelated components, and state management libraries like ngrx for managing application-wide state.
+Error Handling in Angular:
+
+Answer: In Angular, error handling can be centralized using an interceptor or a custom error service. The interceptor can intercept HTTP requests and responses, while the custom error service can handle application-specific errors and display them to the user.
+Lazy Loading in Angular:
+
+Answer: Lazy loading in Angular is a technique where modules are loaded on demand, rather than being loaded when the application starts. This can be achieved using the loadChildren property in the route configuration, which specifies the module to be loaded lazily.
+Change Detection Techniques in Angular:
+Answer: Angular uses zone.js for change detection. When a change is detected, Angular compares the previous and current states of the component and updates the DOM only if necessary. This helps improve performance by reducing unnecessary DOM manipulations.
+Angular State Management (ngrx):
+**Years
+Angular Component Interaction:
+Answer: In Angular, component interaction can be achieved using @Input and @Output decorators for parent-child communication, services for sharing data between unrelated components, and state management libraries like ngrx for managing application-wide state.
+Handling Large Data Sets in Angular:
+Answer: In Angular, large data sets can be handled using techniques like pagination, infinite scrolling, or server-side pagination. These techniques help reduce the amount of data loaded into the DOM, improve performance, and provide a better user experience.
+Angular Material Customization:
+Answer: I have customized components in Angular Material by creating a custom header using Angular Material components and extending them to create a reusable library for multiple subdomains. This library allows us to create a consistent look and feel across our applications.
